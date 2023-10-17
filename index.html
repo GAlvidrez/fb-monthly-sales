@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/fontawesome.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <style>{% Style ProductInventorySearch %}</style>
+    <style>{% Style SalesByCustomerByRep %}</style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="search-header">
+            <div class="search-header__wrapper">
+                <h1>Sales By Rep</h1>                
+            </div>
+            <div class="search-header__wrapper">
+                <!-- Trigger/Open The Modal -->
+                <button class="search-header__edit click-control" type="button" data-toggle="modal" data-target="#reportEditor">Edit Report</button>
+            </div>
+        </header>
+
+        <table class="product-table">
+            <colgroup>
+                <col class="salesRep-col"/>
+                <col class="salesRep-col"/>
+                <col class="salesRep-col"/>
+                <col class="salesRep-col"/>
+                <col class="salesRep-col"/>
+                <col class="salesRep-col"/>
+                <col class="salesRep-col"/>
+                <col class="salesRep-col"/>
+                <col class="salesRep-col"/>
+                <col class="salesRep-col"/>
+                <col class="salesRep-col"/>
+            </colgroup>
+            <thead>
+                <th class="product-table__header">Customer</th>
+                <th class="product-table__header">Alex</th>
+                <th class="product-table__header">Frankie</th>
+                <th class="product-table__header">Jorge</th>
+                <th class="product-table__header">Mack</th>
+                <th class="product-table__header">Roger</th>
+                <th class="product-table__header">Ryan</th>
+                <th class="product-table__header">Ryo</th>
+                <th class="product-table__header">Stan</th>
+                <th class="product-table__header">Zach</th>
+                <th class="product-table__header">Total</th>
+            </thead>
+            <tbody class="product-list" id="productList">
+                <!-- Sales list will be dynamically loaded here -->
+            </tbody>
+            <tfoot id="totalsList">
+                <!-- Totals will be dynamically loaded here -->
+            </tfoot>
+        </table>
+    </div>
+
+    <!-- JQUERY UI -->
+    <script src='https://code.jquery.com/jquery-1.12.4.min.js' integrity='sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=' crossorigin='anonymous'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+    
+    <script>{% Script SalesByCustomerByRep %}</script>
+
+</body>
+
+</html>
