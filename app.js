@@ -31,7 +31,7 @@ let sSQL = `SELECT  customer AS Customer
                     INNER JOIN sostatus ON so.statusId = sostatus.id
                     WHERE postSo.postDate between '${dateRange.fromDate}' AND '${dateRange.toDate}'
                     ) AS sales
-            GROUP BY Customer;`;
+            GROUP BY Customer;`
 
 
 
@@ -46,21 +46,21 @@ let totalSQL = `SELECT  'TOTALS' AS Customer
                         , CONCAT("$",FORMAT(SUM(CASE WHEN sales.salesman = 'stan' THEN sales.totalPrice ELSE 0 END),2,"en_US")) AS Stan
                         , CONCAT("$",FORMAT(SUM(CASE WHEN sales.salesman = 'zach' THEN sales.totalPrice ELSE 0 END),2,"en_US")) AS Zach
                         , CONCAT("$",FORMAT(SUM(sales.totalPrice),2,"en_US")) AS Total
-                    FROM    (
-                            SELECT
-                                so.salesman,
-                                customer.name AS customer,
-                                so.totalPrice,
-                                so.dateCompleted,
-                                so.dateIssued,
-                                sostatus.name
-                            FROM so
-                            INNER JOIN postso ON postso.soId = so.id
-                            INNER JOIN customer ON so.customerId = customer.id
-                            INNER JOIN sostatus ON so.statusId = sostatus.id
-                            WHERE postSo.postDate between '${dateRange.fromDate}' AND '${dateRange.toDate}'
-                    ) AS sales
-                    `
+                FROM    (
+                        SELECT
+                            so.salesman,
+                            customer.name AS customer,
+                            so.totalPrice,
+                            so.dateCompleted,
+                            so.dateIssued,
+                            sostatus.name
+                        FROM so
+                        INNER JOIN postso ON postso.soId = so.id
+                        INNER JOIN customer ON so.customerId = customer.id
+                        INNER JOIN sostatus ON so.statusId = sostatus.id
+                        WHERE postSo.postDate between '${dateRange.fromDate}' AND '${dateRange.toDate}'
+                ) AS sales
+                `
 
 
 
